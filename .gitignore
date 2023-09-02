@@ -1,2 +1,5 @@
 /src/main/resources/StatisticsOutput.xlsx
 /logfile.txt.*
+/jsonReqs/
+/xmlReqs/
+

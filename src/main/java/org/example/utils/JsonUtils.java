@@ -12,14 +12,22 @@ import java.util.List;
 
 public final class JsonUtils {
 
+    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
     private JsonUtils() {
         System.out.println("Private constructor.");
         System.out.println("Forbidden to create this class instance.");
     }
 
+    public static String toJson(Object object) {
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(object);
+    }
+
+
     public static String studentToJson (Student student) {
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonString = gson.toJson(student);
         return jsonString;
 
@@ -27,7 +35,7 @@ public final class JsonUtils {
 
     public static Student studentFromJson (String studentJsonString) {
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Student studentRestoredJson = gson.fromJson(studentJsonString, Student.class);
         return studentRestoredJson;
 
@@ -35,7 +43,7 @@ public final class JsonUtils {
 
     public static String studentListToJson (List<Student> studentDataStorage){
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonString = gson.toJson(studentDataStorage);
         return jsonString;
 
@@ -43,7 +51,7 @@ public final class JsonUtils {
 
     public static List<Student> studentListFromJson (String studentListJsonString){
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 //        List<Student> studentListRestoredFromJson = gson.fromJson(studentListJsonString, List<Student>(){}.getType());
 //        List<Student> participantJsonList = mapper.readValue(studentListJsonString, new TypeReference<List<Student>>(){});
 //        Type collectionType = new TypeToken >(){}.getType();
@@ -61,7 +69,7 @@ public final class JsonUtils {
 
     public static String universityToJson (University university) {
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonString = gson.toJson(university);
         return jsonString;
 
@@ -69,7 +77,7 @@ public final class JsonUtils {
 
     public static University universityFromJson (String universityJsonString) {
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 //        University universityRestoredJson = gson.fromJson(universityJsonString, University.class);
 //        return universityRestoredJson;
         return gson.fromJson(universityJsonString, University.class);
@@ -78,7 +86,7 @@ public final class JsonUtils {
 
     public static String universityListToJson(List<University> universityDataStorage) {
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonString = gson.toJson(universityDataStorage);
         return jsonString;
 
@@ -86,7 +94,7 @@ public final class JsonUtils {
 
     public static List<University> universityListFromJson(String universityListJsonString) {
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Type listType = new TypeToken<ArrayList<University>>() {}.getType();
         ArrayList<University> universityListRestoredFromJson = new Gson().fromJson(universityListJsonString , listType);
         return universityListRestoredFromJson;
