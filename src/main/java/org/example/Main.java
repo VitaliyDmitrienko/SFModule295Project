@@ -89,8 +89,9 @@ public class Main {
         dataStructure.setStatisticsList(finalStatistics);
         dataStructure.setExecutionDate(new Date());
 
-        System.out.println(dataStructure.getStudentList());
-        System.out.println(dataStructure.getUniversityList());
+//        System.out.println(dataStructure.getStudentList());
+//        System.out.println(dataStructure.getUniversityList());
+//        System.out.println(dataStructure.getStatisticsList());
 
         XMLFileWriter.writeToXml(dataStructure);
 
