@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
-@XmlRootElement(name = "Data Structure")
+@XmlRootElement(name = "DataStructure")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DataStructure {
     @XmlElementWrapper(name = "students")

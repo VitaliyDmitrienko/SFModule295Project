@@ -21,16 +21,16 @@ public class XMLFileWriter {
     };
 
     public static void writeToXml(DataStructure dataStructure) {
-        String directoryPath = "xmlReqs";
+        String outputDirectoryPath = "xmlReqs";
         String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        String fileName = "req_" + timestamp + ".xml";
+        String outputFileName = "req_" + timestamp + ".xml";
 
         try {
             JAXBContext context = JAXBContext.newInstance(DataStructure.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-            File directory = new File(directoryPath);
+            File directory = new File(outputDirectoryPath);
             if (!directory.exists()) {
                 if (directory.mkdirs()) {
                     logger.log(Level.INFO, "Directory has been created: {0}", directory.getAbsolutePath());
@@ -42,7 +42,7 @@ public class XMLFileWriter {
                 logger.log(Level.INFO, "Directory already exists: {0}", directory.getAbsolutePath());
             }
 
-            File outputFile = new File(directory, fileName);
+            File outputFile = new File(directory, outputFileName);
 
             marshaller.marshal(dataStructure, outputFile);
             logger.log(Level.INFO, "XML file has been successfully written: {0}", outputFile.getAbsolutePath());

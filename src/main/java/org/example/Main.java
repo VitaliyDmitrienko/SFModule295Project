@@ -39,10 +39,10 @@ public class Main {
 //                    Main.class.getResourceAsStream(loggingConfigFilePath));
                     Main.class.getResourceAsStream("/logging.properties"));
         } catch (IOException e) {
-            System.err.println("Could not setup logger configuration: " + e.toString());
+            System.err.println("Couldn't setup logger configuration: " + e.toString());
         }
 
-        logger.log(INFO, "Application started, Logger configured");
+        logger.log(INFO, "Application get started. Logger has been configured.");
 
 
 //        Utility  Class XLSXFileReader() has private constructor & forbidden to create instance
@@ -65,7 +65,7 @@ public class Main {
         IStudentComparator studentComparator =
                 UnitedComparator.getStudentComparator(EStudentMethodComparator.STUDENT_AVG_EXAM_SCORE_COMPARATOR);
         studentDataStorage.sort(studentComparator);
-        System.out.println(studentDataStorage);
+//        System.out.println(studentDataStorage);
 
         List<University> universityDataStorage = new ArrayList<>(XLSXFileReader.getUniversityData());
         IUniversityComparator universityComparator =
@@ -89,7 +89,8 @@ public class Main {
         dataStructure.setStatisticsList(finalStatistics);
         dataStructure.setExecutionDate(new Date());
 
-//        System.out.println(dataStructure);
+        System.out.println(dataStructure.getStudentList());
+        System.out.println(dataStructure.getUniversityList());
 
         XMLFileWriter.writeToXml(dataStructure);
 
