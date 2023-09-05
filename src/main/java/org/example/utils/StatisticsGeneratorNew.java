@@ -54,7 +54,8 @@ public class StatisticsGeneratorNew {
                     .average();
             statistics.setAvgExamScore(0);
             avgExamScore.ifPresent(value -> statistics.setAvgExamScore(
-                    (float)BigDecimal.valueOf(value).setScale(2, RoundingMode.HALF_UP).doubleValue()));
+//                    (float)
+                            BigDecimal.valueOf(value).setScale(2, RoundingMode.HALF_UP).doubleValue()));
 //                    (float) BigDecimal.valueOf(value).setScale(2, RoundingMode.HALF_UP).doubleValue()));
         });
 
