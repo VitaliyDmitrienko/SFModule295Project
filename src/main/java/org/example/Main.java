@@ -39,7 +39,7 @@ public class Main {
 //                    Main.class.getResourceAsStream(loggingConfigFilePath));
                     Main.class.getResourceAsStream("/logging.properties"));
         } catch (IOException e) {
-            System.err.println("Couldn't setup logger configuration: " + e.toString());
+            System.err.println("Couldn't setup logger configuration: " + e);
         }
 
         logger.log(INFO, "Application get started. Logger has been configured.");
@@ -65,24 +65,20 @@ public class Main {
         IStudentComparator studentComparator =
                 UnitedComparator.getStudentComparator(EStudentMethodComparator.STUDENT_AVG_EXAM_SCORE_COMPARATOR);
         studentDataStorage.sort(studentComparator);
-//        System.out.println(studentDataStorage);
 
         List<University> universityDataStorage = new ArrayList<>(XLSXFileReader.getUniversityData());
         IUniversityComparator universityComparator =
                 UnitedComparator.getUniversityComparator(EUniversityMethodComparator.UNIVERSITY_YEAR_OF_FOUNDATION_COMPARATOR);
         universityDataStorage.sort(universityComparator);
-//        System.out.println(universityDataStorage);
 
         List<Statistics> finalStatistics = StatisticsGeneratorNew.statisticsCreator(studentDataStorage, universityDataStorage);
-//        List<Statistics> finalStatistics = StatisticsGeneratorOld.statisticsCreator(studentDataStorage, universityDataStorage);
-//        System.out.println(finalStatistics);
 
-//        logger.log(Level.INFO, "Statistics output generated finished successfully: ", finalStatistics);
+        logger.log(Level.INFO, "Statistics output generated finished successfully.");
 
 //        XLSXFileWriter.generateStatistics(finalStatistics, outputFilePath);
 
-//        System.out.println("check");
-
+//        DataStructure dataStructure = new DataStructure(testStudentList, universityDataStorage, finalStatistics, new Date());
+//        DataStructure dataStructure = new DataStructure(studentDataStorage, universityDataStorage, finalStatistics, new Date());
         DataStructure dataStructure = new DataStructure();
         dataStructure.setStudentList(studentDataStorage);
         dataStructure.setUniversityList(universityDataStorage);

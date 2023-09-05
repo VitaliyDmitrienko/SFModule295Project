@@ -7,6 +7,7 @@ import java.util.List;
 @XmlRootElement(name = "DataStructure")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DataStructure {
+
     @XmlElementWrapper(name = "students")
     @XmlElement(name = "student")
     private List<Student> studentList;
@@ -30,7 +31,14 @@ public class DataStructure {
         this.universityList = universityList;
         this.statisticsList = statisticsList;
         this.executionDate = executionDate;
+
     }
+//    public DataStructure(Date executionDate, List<Statistics> statisticsList, List<University> universityList, List<Student> studentList) {
+//        this.executionDate = executionDate;
+//        this.statisticsList = statisticsList;
+//        this.universityList = universityList;
+//        this.studentList = studentList;
+//    }
 
     public List<Student> getStudentList() {
         return studentList;
@@ -64,6 +72,6 @@ public class DataStructure {
         this.executionDate = executionDate;
     }
 
-    public DataStructure createDataStructure ()
-    { return new DataStructure(studentList, universityList, statisticsList, executionDate);}
+//    public DataStructure createDataStructure ()
+//    { return new DataStructure(studentList, universityList, statisticsList, executionDate);}
 }

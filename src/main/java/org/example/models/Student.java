@@ -39,7 +39,7 @@ public class Student {
                 ", universityId='" + universityId + '\'' +
                 ", currentCourseNumber=" + currentCourseNumber +
                 ", avgExamScore=" + avgExamScore +
-                '}' + '\n';
+                '}' + "\n";
     }
 
     public Student(String fullName, String universityId, int currentCourseNumber, float avgExamScore) {
@@ -62,5 +62,21 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(fullName, universityId, currentCourseNumber, avgExamScore);
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setUniversityId(String universityId) {
+        this.universityId = universityId;
+    }
+
+    public void setCurrentCourseNumber(int currentCourseNumber) {
+        this.currentCourseNumber = currentCourseNumber;
+    }
+
+    public void setAvgExamScore(float avgExamScore) {
+        this.avgExamScore = avgExamScore;
     }
 }
