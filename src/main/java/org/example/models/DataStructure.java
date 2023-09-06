@@ -6,6 +6,8 @@ import java.util.List;
 
 @XmlRootElement(name = "DataStructure")
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = { "executionDate", "universityList", "statisticsList", "studentList" })
+//@XmlAccessorOrder(XmlAccessOrder.ALPHABETICAL)
 public class DataStructure {
 
     @XmlElementWrapper(name = "students")
